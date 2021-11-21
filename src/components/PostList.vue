@@ -1,0 +1,30 @@
+<template>
+    <div>
+        <h3>Список пользователей</h3>
+        <post-item
+         v-for="post in posts"
+         :key="post" 
+         :post="post"/>
+
+    </div>
+</template>
+
+<script>
+import PostItem from '@/components/PostItem'
+
+export default {
+    props: {
+        posts: {
+            type: Array,
+            required: true
+        }
+    },
+    components: {
+        PostItem
+    }
+}
+</script>
+
+<style scoped>
+
+</style>
