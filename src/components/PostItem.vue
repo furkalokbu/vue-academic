@@ -1,14 +1,19 @@
 <template>
       <div class="post">
+          <div>
             <div><strong>Name:  </strong>{{ post.title }}</div>
             <div><strong>About: </strong>{{ post.body }}</div>
-            <my-button>DELETE</my-button> 
+            </div>
+        <div class="post__btns">
+            <my-button @click="$emit('remove', post)">DELETE</my-button> 
+        </div>
    </div>
 </template>
 
 <script>
 
 export default {
+
     props: {
         post: {
             type: Object,
